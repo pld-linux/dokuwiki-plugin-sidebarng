@@ -7,7 +7,7 @@ License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://cloud.github.com/downloads/chimeric/dokuwiki-plugin-sidebarng/plugin-sidebarng.tgz
 # Source0-md5:	918b55089ebcbb8c98bd3b08f79aad37
-URL:		http://www.dokuwiki.org/template:sidebar
+URL:		http://www.dokuwiki.org/plugin:sidebarng
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	dokuwiki >= 20091225
 BuildArch:	noarch
