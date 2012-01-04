@@ -2,11 +2,11 @@
 Summary:	Adds flexible sidebar to DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20100604
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://cloud.github.com/downloads/chimeric/dokuwiki-plugin-sidebarng/plugin-sidebarng.tgz
-# Source0-md5:	918b55089ebcbb8c98bd3b08f79aad37
+Source0:	https://github.com/chimeric/dokuwiki-plugin-sidebarng/tarball/master/%{name}-%{version}.tgz
+# Source0-md5:	0971442a6a3cf782cf8240a7b160769a
 URL:		http://www.dokuwiki.org/plugin:sidebarng
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	dokuwiki >= 20091225
@@ -33,19 +33,19 @@ ile to możliwe.
 
 %prep
 %setup -qc
-mv %{plugin}/* .
+mv *-%{plugin}-*/* .
 
-version=$(cat VERSION)
+version=$(awk '/^date/{print $2}' plugin.info.txt)
 if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
 	: %%{version} mismatch
-#	exit 1
+	exit 1
 fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{plugindir}
 cp -a . $RPM_BUILD_ROOT%{plugindir}
-%{__rm} $RPM_BUILD_ROOT%{plugindir}/{COPYING,README,VERSION}
+%{__rm} $RPM_BUILD_ROOT%{plugindir}/{COPYING,README}
 
 %find_lang %{name}.lang
 
@@ -64,5 +64,6 @@ fi
 %dir %{plugindir}
 %{plugindir}/*.css
 %{plugindir}/*.php
+%{plugindir}/*.txt
 %{plugindir}/conf
 %{plugindir}/sidebars
