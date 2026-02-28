@@ -2,7 +2,7 @@
 Summary:	Adds flexible sidebar to DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20100604
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/chimeric/dokuwiki-plugin-sidebarng/tarball/master/%{name}-%{version}.tgz
