@@ -2,7 +2,7 @@
 Summary:	Adds flexible sidebar to DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20100604
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/chimeric/dokuwiki-plugin-sidebarng/tarball/master/%{name}-%{version}.tgz
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		dokuconf	/etc/webapps/dokuwiki
 %define		dokudir		/usr/share/dokuwiki
 %define		plugindir	%{dokudir}/lib/plugins/%{plugin}
-%define		find_lang 	%{_usrlibrpm}/dokuwiki-find-lang.sh %{buildroot}
+%define		find_lang 	%{_rpmconfigdir}/dokuwiki-find-lang.sh %{buildroot}
 
 %description
 Better navigation with DokuWiki. Features a navigation sidebar, a
